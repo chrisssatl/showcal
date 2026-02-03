@@ -23,8 +23,9 @@ Then open the URL Vercel prints; the same app will use the local API.
 ## Deploy (Vercel)
 
 1. Push this repo to GitHub and connect it to [Vercel](https://vercel.com).
-2. Vercel will detect Vite: build command `npm run build`, output `dist`, and will also deploy the `api/` folder as serverless functions.
-3. Your app and calendar feed will be live at `https://your-project.vercel.app` and `https://your-project.vercel.app/api/feed?shows=1,2,3`.
+2. **If the project lives in a subfolder** (e.g. `tv-show-calendar/`): In Vercel → Project **Settings** → **General** → **Root Directory**, set it to `tv-show-calendar` (or the folder that contains `package.json`). Save and redeploy. This fixes "No Next.js version detected" when the repo root has no `package.json`.
+3. `vercel.json` in this project sets `framework: "vite"`, so Vercel uses Vite: build `npm run build`, output `dist`, and deploys the `api/` folder as serverless functions.
+4. Your app and calendar feed will be live at `https://your-project.vercel.app` and `https://your-project.vercel.app/api/feed?shows=1,2,3`.
 
 ## Doc index
 
